@@ -23,5 +23,5 @@ public interface UserService {
      * 查找所有用户
      * @return
      */
-    List<User> findAll();
+    List<User> queryAllUser();
 }

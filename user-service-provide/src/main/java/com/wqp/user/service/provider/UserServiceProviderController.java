@@ -36,6 +36,13 @@ public class UserServiceProviderController {
         return userService.saveUser(user);
     }
 
+    @GetMapping("/query/all/list")
+    public List<User> queryAllUser(){
+        return userService.queryAllUser();
+    }
+
+
+
     /**
      * 增加超时处理
      * @return
@@ -51,7 +58,7 @@ public class UserServiceProviderController {
         long executionTime = random.nextInt(200);
         LOG.info("find all user info execution time is {} ms ", executionTime);
         Thread.sleep(executionTime);
-        return userService.findAll();
+        return userService.queryAllUser();
     }
 
     /**

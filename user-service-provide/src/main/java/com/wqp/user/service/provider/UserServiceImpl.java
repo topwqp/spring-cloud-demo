@@ -5,7 +5,10 @@ import com.google.common.collect.Lists;
 import domain.User;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @Description 服务实现
@@ -15,17 +18,16 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
+    private Map<Integer,User> userMap = new ConcurrentHashMap(16);
+
     @Override
     public boolean saveUser(User user) {
-        return false;
+        return userMap.put(user.getUserId(),user) == null;
     }
 
     @Override
-    public List<User> findAll() {
-        User tom = new User.Builder().userId(1).username("Tom").build();
-        User cat = new User.Builder().userId(2).username("cat").build();
-        User jeffy = new User.Builder().userId(3).username("jeffy").build();
-        List<User>  list = Lists.newArrayList(tom,cat,jeffy);
+    public List<User> queryAllUser() {
+        List<User>  list =new ArrayList<>(userMap.values());
         return list;
     }
 }

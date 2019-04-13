@@ -9,6 +9,10 @@ public class User {
     private Integer userId;
     private String  username;
 
+    public User(){
+
+    }
+
     private User(Builder builder) {
         setUserId(builder.userId);
         setUsername(builder.username);
