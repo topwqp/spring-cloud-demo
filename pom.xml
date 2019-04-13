@@ -9,6 +9,7 @@
         <module>hystrix-dashboard</module>
 		<module>boot</module>
 		<module>client</module>
+		<module>eureka-server</module>
 	</modules>
 
 	<groupId>com.wqp</groupId>
