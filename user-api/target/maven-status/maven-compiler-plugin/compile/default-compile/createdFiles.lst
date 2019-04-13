@@ -1,0 +1,4 @@
+domain/User$1.class
+domain/User.class
+domain/User$Builder.class
+api/UserService.class
