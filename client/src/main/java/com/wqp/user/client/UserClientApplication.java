@@ -15,9 +15,9 @@ import org.springframework.web.client.RestTemplate;
  * Date 19/4/13 13:40
  **/
 @SpringBootApplication
-@RibbonClients({
-        @RibbonClient(name = "user-service-provider")
-})
+//@RibbonClients({
+//        @RibbonClient(name = "user-service-provider")
+//})
 @EnableDiscoveryClient
 public class UserClientApplication {
     public static void main(String args[]){
