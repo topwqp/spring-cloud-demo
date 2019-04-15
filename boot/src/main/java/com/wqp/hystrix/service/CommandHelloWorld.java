@@ -21,6 +21,8 @@ public class CommandHelloWorld extends HystrixCommand<String> {
 
     @Override
     protected String run() throws Exception {
-        return "hello " + name;
+        return "Hello " + name;
     }
+
+
 }
