@@ -10,7 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.wqp</groupId>
-    <artifactId>thrid-service</artifactId>
+    <artifactId>base-core</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

@@ -1,7 +1,6 @@
 package com.wqp.user.service.provider;
 
 import api.UserService;
-import com.google.common.collect.Lists;
 import domain.User;
 import org.springframework.stereotype.Service;
 

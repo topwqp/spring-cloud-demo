@@ -10,9 +10,10 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
  * @Author Wang QiuPeng
  * Date 19/4/7 17:18
  **/
-@EnableHystrix
+
 @SpringBootApplication
 @EnableDiscoveryClient
+@EnableHystrix
 public class UserServiceProviderApplication {
     public static void main(String args[]){
         SpringApplication.run(UserServiceProviderApplication.class,args);
