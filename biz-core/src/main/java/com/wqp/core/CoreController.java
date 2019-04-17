@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @Description TODO
+ * @Description core service provide
  * @Author Wang QiuPeng
  * Date 19/4/13 23:18
  **/

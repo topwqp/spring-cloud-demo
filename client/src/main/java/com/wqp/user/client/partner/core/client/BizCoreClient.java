@@ -3,7 +3,6 @@ package com.wqp.user.client.partner.core.client;
 import com.wqp.user.client.config.FeignLogConfiguration;
 import com.wqp.user.client.partner.core.fallback.BizCoreFallback;
 import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 

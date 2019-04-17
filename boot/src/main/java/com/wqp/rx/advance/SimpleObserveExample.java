@@ -1,12 +1,11 @@
 package com.wqp.rx.advance;
 
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.disposables.Disposable;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import rx.Observable;
 import rx.Observer;
+import rx.Subscriber;
 
 /**
  * @Description simple demo
@@ -18,51 +17,45 @@ import rx.Observer;
 public class SimpleObserveExample  {
     private static final Logger logger = LoggerFactory.getLogger(SimpleObserveExample.class);
 
-    Observer<String> observer = new Observer<String>() {
-        /**
-         * 在事件还未发送之前被调用，可以用来做一些准备操作。里面的Disposable则是用来切断上下游关系的。
-         * @param disposable
-         */
-        @Override
-        public void onSubscribe(Disposable disposable) {
-            logger.info("onSubscribe: " + disposable);
-        }
+    public static void main(String args[]){
 
-        /**
-         * onNext：普通的事件
-         * @param s
-         */
-        @Override
-        public void onNext(String s) {
-            logger.info("onNext: " + s);
-        }
+        Observer<String> observer = new Observer<String>() {
 
-        /**
-         * 事件队列异常，在事件处理过程中出现异常情况时，此方法会被调用。同时队列将会终止，也就是不允许再有事件发出。
-         * @param throwable
-         */
-        @Override
-        public void onError(Throwable throwable) {
-            logger.info("onError: " + throwable);
-        }
+            /**
+             * onNext：普通的事件
+             * @param
+             */
+            @Override
+            public void onNext(String s) {
+                if ("error".equalsIgnoreCase(s)){
+                    throw new RuntimeException("occur error");
+                }else{
+                    logger.info("onNext: " + s);
+                }
 
-        /**
-         * 事件队列完成
-         */
-        @Override
-        public void onComplete() {
-            logger.info("onComplete: ");
-        }
-    };
+            }
 
-    Observable<String> observable = Observable.create(new ObservableOnSubscribe<String>() {
-        @Override
-        public void subscribe(ObservableEmitter<String> observableEmitter) throws Exception {
-            observableEmitter.onNext("Hello");
-            observableEmitter.onNext("Rxjava2");
-            observableEmitter.onNext("My name is Silence");
-            observableEmitter.onNext("What's your name");
-            observableEmitter.onComplete();
-        }
-    });
+            /**
+             * 事件队列完成
+             */
+            @Override
+            public void onCompleted() {
+                logger.info("final onComplete ");
+            }
+
+            /**
+             * 事件队列异常，在事件处理过程中出现异常情况时，此方法会被调用。同时队列将会终止，也就是不允许再有事件发出。
+             * @param throwable
+             */
+            @Override
+            public void onError(Throwable throwable) {
+                logger.info("onError: " + throwable);
+            }
+        };
+        Observable<String> observable = Observable.just("Hello", "Rx java", "error", "What's your name");
+        //Observable.defer();
+
+        observable.subscribe(observer);
+    }
+
 }
