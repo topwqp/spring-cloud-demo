@@ -16,7 +16,7 @@ public class CoreController {
 
     private static final Logger LOG = LoggerFactory.getLogger(CoreController.class);
 
-    @RequestMapping(value = "/queryAccountInfo",method = RequestMethod.POST)
+    @RequestMapping(value = "/queryAccountInfo",method = RequestMethod.GET)
     public String queryAccountInfo() throws Exception{
       Thread.sleep(3000);
       LOG.info("core  query account info  invoked");

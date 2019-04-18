@@ -19,7 +19,7 @@ public interface BizCoreClient {
      * 查询账户信息
      * @return
      */
-    @RequestMapping(value = "/queryAccountInfo", method = RequestMethod.POST)
+    @RequestMapping(value = "/queryAccountInfo", method = RequestMethod.GET)
     String queryAccountInfo();
 
 }

@@ -10,4 +10,8 @@ import org.springframework.stereotype.Service;
  **/
 @Service
 public class UserServiceFallback implements UserServiceClient {
+    @Override
+    public String queryUserInfo() {
+        return "query user info fail";
+    }
 }
