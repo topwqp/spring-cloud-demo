@@ -116,12 +116,7 @@ public class RxDemo {
 
 
     public static void filter(){
-        Observable.just(1,2,3,4,5).filter(new Func1<Integer, Boolean>() {
-            @Override
-            public Boolean call(Integer integer) {
-                return integer > 3;
-            }
-        }).subscribe(integer -> logger.info("result is {}",integer));
+        Observable.just(1,2,3,4,5).filter(integer -> integer > 3).subscribe(integer -> logger.info("result is {}",integer));
     }
 
 
@@ -133,7 +128,7 @@ public class RxDemo {
 
     public static void buffer(){
         Integer[] source = {1,2,3,4,5,6};
-        Observable.from(source).buffer(2).subscribe((Action1<List<Integer>>) integers -> {
+        Observable.from(source).buffer(2).subscribe(integers -> {
             for (Integer integer : integers) {
                 logger.info("accept: " + integer);
             }
@@ -180,12 +175,7 @@ public class RxDemo {
     }
 
     public static  void defer(){
-        Observable<Integer> observable = Observable.defer(new Func0<Observable<Integer>>() {
-            @Override
-            public Observable<Integer> call() {
-                return Observable.just(1,2,3,4);
-            }
-        });
+        Observable<Integer> observable = Observable.defer(() -> Observable.just(1,2,3,4));
 
         Observer observer =  new Observer() {
             @Override
