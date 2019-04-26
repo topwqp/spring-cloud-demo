@@ -40,6 +40,7 @@ public class SimpleObserveExample  {
              */
             @Override
             public void onCompleted() {
+
                 logger.info("final onComplete ");
             }
 
