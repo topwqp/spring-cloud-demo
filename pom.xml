@@ -10,7 +10,6 @@
 		<module>boot</module>
 		<module>client</module>
 		<module>eureka-server</module>
-		<module>thrid-service</module>
 		<module>base-core</module>
 	</modules>
 
