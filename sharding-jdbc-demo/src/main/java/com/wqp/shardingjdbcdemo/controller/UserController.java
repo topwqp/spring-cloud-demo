@@ -2,6 +2,8 @@ package com.wqp.shardingjdbcdemo.controller;
 
 import com.wqp.shardingjdbcdemo.entity.User;
 import com.wqp.shardingjdbcdemo.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +19,8 @@ import java.util.List;
  */
 @RestController
 public class UserController {
+    private static final Logger LOG = LoggerFactory.getLogger(UserController.class);
+
     @Autowired
     UserService userService;
     @RequestMapping(value = "/user", method = RequestMethod.GET)
@@ -26,11 +30,13 @@ public class UserController {
 
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public List<User> getUsers() {
+        LOG.info("invoke query request ");
         return userService.getUsers();
     }
 
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     public int addUser(@RequestBody User user) {
+        LOG.info("add user success");
         return userService.addUser(user);
     }
 

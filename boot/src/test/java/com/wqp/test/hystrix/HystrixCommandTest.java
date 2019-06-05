@@ -1,8 +1,8 @@
 package com.wqp.test.hystrix;
 
-import com.wqp.hystrix.BootApplication;
-import com.wqp.hystrix.service.CommandHelloWorld;
-import com.wqp.hystrix.service.ObservableCommand;
+import com.wqp.domain.BootApplication;
+import com.wqp.domain.hystrix.service.CommandHelloWorld;
+import com.wqp.domain.hystrix.service.ObservableCommand;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

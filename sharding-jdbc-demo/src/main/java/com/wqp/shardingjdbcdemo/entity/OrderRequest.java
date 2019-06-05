@@ -1,7 +1,5 @@
 package com.wqp.shardingjdbcdemo.entity;
 
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * @Description:

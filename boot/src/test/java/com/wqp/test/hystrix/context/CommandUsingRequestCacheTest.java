@@ -1,8 +1,8 @@
 package com.wqp.test.hystrix.context;
 
 import com.netflix.hystrix.strategy.concurrency.HystrixRequestContext;
-import com.wqp.hystrix.BootApplication;
-import com.wqp.hystrix.context.CommandUsingRequestCache;
+import com.wqp.domain.BootApplication;
+import com.wqp.domain.hystrix.context.CommandUsingRequestCache;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

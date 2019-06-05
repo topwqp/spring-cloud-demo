@@ -8,6 +8,7 @@ import com.wqp.shardingjdbcdemo.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -37,9 +38,9 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void addOrder(OrderVO orderVO) {
         Order order = orderVO.getOrder();
+        order.setCreateTime(new Date());
         List<OrderItem> orderItems = orderVO.getOrderItems();
         addSnowId(order, orderItems);
-
         orderMapper.addOrder(order);
         orderItemMapper.addOrderItems(orderItems);
 

@@ -74,7 +74,7 @@ public class DateUtil {
     /**
      * Date增减天数
      *
-     * @date 2018/5/25
+     * @date 2019年06月03日17:50:40
      */
     public static Date addDay(Date date, int num) {
         Calendar calendar = new GregorianCalendar();
@@ -87,7 +87,7 @@ public class DateUtil {
     /**
      * Date增减月数
      *
-     * @date 2018/5/18
+     * @date 2019年06月03日17:50:54
      */
     public static Date addMonth(Date date, int num) {
         Calendar calendar = new GregorianCalendar();

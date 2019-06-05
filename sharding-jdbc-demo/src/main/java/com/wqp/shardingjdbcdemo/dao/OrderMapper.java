@@ -28,8 +28,8 @@ public interface OrderMapper {
     @SelectProvider(type = OrderMapperProvider.class, method = "getOrder")
     List<Order> getOrder(OrderRequest orderRequest);
 
-    @Insert("insert into order(order_id, user_id, description) " +
-            "values(#{order.orderId}, #{order.userId}, #{order.description})")
+    @Insert("insert into order(order_id, user_id, description,create_time) " +
+            "values(#{order.orderId}, #{order.userId}, #{order.description},#{order.createTime})")
     int addOrder(@Param("order") Order order);
 
     @Results(id = "orderInfo", value = {
