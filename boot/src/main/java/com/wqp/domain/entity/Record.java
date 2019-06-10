@@ -1,10 +1,15 @@
 package com.wqp.domain.entity;
 
+import lombok.*;
+
 /**
  * @Description: record entity
  * @Author Wang QiuPeng
  * @Date 2019-06-05 15:00
  */
+@Data
+@Builder
+@NoArgsConstructor
 public class Record {
 
     private Integer id;
@@ -14,22 +19,6 @@ public class Record {
     private Record(Builder builder) {
         setId(builder.id);
         setLogs(builder.logs);
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getLogs() {
-        return logs;
-    }
-
-    public void setLogs(String logs) {
-        this.logs = logs;
     }
 
 
@@ -53,8 +42,5 @@ public class Record {
         public Record build() {
             return new Record(this);
         }
-    }
-
-    public Record() {
     }
 }

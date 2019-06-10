@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.*;
 
 
+
 /**
  * @Description: record add controller
  * @Author Wang QiuPeng
@@ -36,7 +37,8 @@ public class RecordController {
     public List<Record> getRecords() {
         LOG.info("invoke query request ");
         List<Record> recordList = new ArrayList<>();
-        Record record = new Record.Builder().id(1).logs("test").build();
+        //Record  record = new Record.RecordBuilder().id(1).logs("111").build();
+        Record record = new Record.Builder().id(1).logs("addg").build();
         recordList.add(record);
         return recordList;
     }
